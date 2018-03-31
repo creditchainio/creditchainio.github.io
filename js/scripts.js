@@ -27,7 +27,7 @@ $(document).ready(function(){
     //drawing
     
     $('svg').width($('.graph').width());
-    $('svg').height($('.wrapper').innerHeight());
+    $('svg').height($('.graph').height());
     
     var centerX = $('svg').width()/2;
     var centerY = $('svg').height()/2;
