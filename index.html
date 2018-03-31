@@ -5,15 +5,37 @@
     <title>CreditChain</title>
     <script src="https://cdn.jsdelivr.net/npm/golos-js@0.6.1/dist/golos.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="custom.css" />
 </head>
 <body>
-
+<header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand"><img src="favicon.ico" width="30" height="30" class="d-inline-block align-top" alt=""> CreditChain</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                        <li class="nav-item">
+                            <button class="btn btn-success my-2 my-sm-0" id="checkHistory"><span class="icon-link"></span> Получить всю историю</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="btn btn-primary my-2 my-sm-0" id="sendTransaction"><span class="icon-info"></span> Отправить цепочку</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
 <!-- fetch('fetch.json').then(res=>res.json()).then(res=>console.log(res.test)); -->
-<button type="button"  class="btn btn-success" id="checkHistory">Получить всю историю</button>
-<button type="button"  class="btn btn-primary" id="sendTransaction">Отправить цепочку</button>
-<input type="text" class="form-control" id="getFirst" placeholder="введите название поля">
-<input type="text"  class="form-control" id="getSecond" placeholder="введите значение поля">
-<div id="set"></div>
+<article>
+    <main role="main" class="container">
+        <input type="text" class="form-control" id="getFirst" placeholder="введите название поля">
+        <input type="text"  class="form-control" id="getSecond" placeholder="введите значение поля">
+        <div id="set" class="text-center"></div>
+    </main>
+</article>
 <script>
     let _from='test7', to='test1', agent='test3', masterWho = 'test3'
     const wif = '5JwrjAzTveuuG3Kkpwf9iGNe94voVgMT6SdkVHjpN4nvThLCVLY', username = 'test7'
@@ -22,7 +44,7 @@
     golos.config.set('chain_id', '5876894a41e6361bde2e73278f07340f2eb8b41c2facd29099de9deef6cdb679');
     function history(){
         golos.api.getAccountHistory(username, 100, 100, function(err, result) {
-            result.forEach(value => console.log('АДРЕСС',value[1].trx_id));
+            result.forEach(value => {let ss = document.getElementById('set').innerHTML= document.getElementById('set').innerHTML + '<br>АДРЕСС: '+'<h3>'+value[1].trx_id+'</h3>'});
             //console.log(err, result);
         });
     }
