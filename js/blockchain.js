@@ -18,7 +18,7 @@ let username = 'test7';
             data: []
         }, author = username, title = 'EE list', permlink = constPermlik; 
         test.forEach((value) => {
-            jsonMetadata.data.push(value);
+            jsonMetadata.data.push(window.btoa(window.btoa(value)));
         });
         jsonMetadata = JSON.stringify(jsonMetadata);
             //permlink = String(Math.floor(Math.random() * (10000 - 1 + 1)) + 1);

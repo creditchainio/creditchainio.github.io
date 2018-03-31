@@ -1,6 +1,5 @@
 * {
   box-sizing: border-box;
-  overflow-x: hidden;
   -webkit-transition: all .4s ease;
 }
 a, a:hover {
@@ -63,8 +62,10 @@ header {
   display: none;
 }
 .wrapper .graph {
-  height: 100vh;
   background-color: #f4f4f4;
+}
+svg{
+	height: 100vh;
 }
 .graph .cmp {
   background-color: burlywood;
