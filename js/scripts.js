@@ -2,13 +2,11 @@ $(document).ready(function(){
     $('#blockchain').on('click',()=>{
         $('#table-hash').css('display','block');
         $('#graph').css('display','none');
-        console.log('block');
     });
 
     $('#companies').on('click',()=>{
         $('#graph').css('display','block');
         $('#table-hash').css('display','none');
-        console.log('graph');
     })
 
     $('.btn-companies').click(function(){
