@@ -32,13 +32,14 @@ $(document).ready(function(){
     var centerX = $('svg').width()/2;
     var centerY = $('svg').height()/2;
     var N = 6;
+    var M = 6;
     var R = 300;
     var r = 40;
     var cmp = [];
+    var lines = [];
     
     initialize(N,R);
     drawChain(cmp);
-    
     
     function initialize(N,R){
         var fi = 0;
@@ -50,10 +51,17 @@ $(document).ready(function(){
             Company.x = centerX + R*Math.cos(fi);
             Company.y = centerY + R*Math.sin(fi);
             Company.R = r;
-            (i!=N-1)? bind = i+1 : bind = 0;
-            Company.binds = [bind,2];
+//            (i!=N-1)? bind = i+1 : bind = 0;
+//            Company.binds = [bind,2];
             fi+=dfi;
             cmp.push(Company);
+        }
+        for(var i=0; i<M;i++){
+            var Line = new Object();
+            Line.from = i;
+            Line.to = (i!=M-1)? i+1 : 0;
+            Line.ID = Line.from+'-'+Line.to;
+            lines.push(Line);
         }
     }
       
@@ -63,11 +71,14 @@ $(document).ready(function(){
     }
     
     function drawLines(cmp){
-        for(var i=0; i<N; i++){
-            for(var j=0;j<cmp[i].binds.length;j++){
-                var targetCmp = findCmp(cmp,cmp[i].binds[j]);
-                drawLine(cmp[i],cmp[targetCmp]);
-            }
+        for(var i=0; i<M; i++){
+            var from = findCmp(cmp,lines[i].from);
+            var to = findCmp(cmp,lines[i].to);
+            drawLine(lines[i]);
+            //for(var j=0;j<cmp[i].binds.length;j++){
+            //    var targetCmp = findCmp(cmp,cmp[i].binds[j]);
+            //    drawLine(cmp[i],cmp[targetCmp]);
+            //}
         }
     }
     
@@ -102,7 +113,7 @@ $(document).ready(function(){
         $('svg').append(circ);
     }
     
-    function drawLine(Company1,Company2){
+    /*function drawLine1(Company1,Company2){
         var line = document.createElementNS('http://www.w3.org/2000/svg','line');
         line.setAttribute('id',Company1.ID+'-'+Company2.ID);
         line.setAttribute('x1',Company1.x);
@@ -113,22 +124,19 @@ $(document).ready(function(){
         line.setAttribute('stroke','#5a9578');
         line.setAttribute('stroke-width',5);
         $('svg').append(line);
+    }*/
+    
+    function drawLine(line){
+        //drawLine1(findCmp(line.from),findCmp(line.to));
+        var line = document.createElementNS('http://www.w3.org/2000/svg','line');
+        line.setAttribute('id',line.ID);
+        line.setAttribute('x1',findCmp(cmp,line.from).x);
+        line.setAttribute('y1',findCmp(cmp,line.from).y);
+        line.setAttribute('x2',findCmp(cmp,line.to).x);
+        line.setAttribute('y2',findCmp(cmp,line.to).y);
+        line.setAttribute('class','bind');
+        line.setAttribute('stroke','#5a9578');
+        line.setAttribute('stroke-width',5);
+        $('svg').append(line);
     }
-    
-    //
-//    $('.node').hover(function(){
-//        var id = this.getAttribute('id');
-//        var thisNode = findCmp(id);
-//        console.log(thisNode);
-//        //пройти по binds
-//        //найти все круги-цели (int)
-//        //найти линии по id
-//        
-//    });
-    
-    //$('[id$="-"]')
-    
-//    document.getElementsByClassName('.bind').addEventListener('hover',function(){
-//        this.style.opacity = 0;    
-//    });
 });
