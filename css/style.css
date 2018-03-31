@@ -83,3 +83,71 @@ header {
 .table-hash{
     background-color: #f4f4f4;
 }
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?rcudrl');
+  src:  url('fonts/icomoon.eot?rcudrl#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?rcudrl') format('truetype'),
+    url('fonts/icomoon.woff?rcudrl') format('woff'),
+    url('fonts/icomoon.svg?rcudrl#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-folder-download:before {
+  content: "\e933";
+}
+.icon-folder-upload:before {
+  content: "\e934";
+}
+
+
+.github-corner {
+  position: fixed;
+  top: 0;
+  right: 0; }
+
+.github-corner:hover .octo-arm {
+  animation:octocat-wave 560ms ease-in-out
+}
+.octo-arm {
+  transform-origin: 40px;
+  position:absolute;
+}
+
+@keyframes octocat-wave{
+  0%,100%{
+      transform:rotate(0)
+  }
+  20%,60%{
+      transform:rotate(-1deg)
+  }
+  40%,80%{
+      transform:rotate(10deg)
+  }
+}
+@media (max-width:500px){
+  .github-corner:hover .octo-arm{
+      animation:none
+  }
+  .github-corner .octo-arm{
+      animation:octocat-wave 560ms ease-in-out
+  }
+}
+

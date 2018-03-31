@@ -5,7 +5,8 @@ let username = 'test7';
 
     function history(){
         golos.api.getAccountHistory(username, 100, 100, function(err, result) {
-            result.forEach(value => {let ss = document.getElementById('set').innerHTML= document.getElementById('set').innerHTML + '<br>АДРЕСС: '+'<h3>'+value[1].trx_id+'</h3>'});
+            document.getElementById('table-hash').innerHTML='';
+            result.forEach(value => {let ss = document.getElementById('table-hash').innerHTML= document.getElementById('table-hash').innerHTML + '<br><div class="border border-secondary text-center">ADDRESS: '+'<h3>'+value[1].trx_id+'</h3></div>'});
             //console.log(err, result);
         });
     }

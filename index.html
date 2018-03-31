@@ -6,9 +6,21 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/golos-js@0.6.1/dist/golos.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0/materia/bootstrap.min.css">
     <title>CreditChain</title>
   </head>
-  <body scroll="yes">
+  <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand text-white"><img src="favicon.ico" width="30" height="30" class="d-inline-block align-top" alt=""> CreditChain</a>
+                <a class="github-corner" target="_blank" href="https://github.com/creditchainio/creditchainio.github.io" tabindex="-1">
+                    <img src="img/github-arm.svg" xmlns="http://www.w3.org/2000/svg" class="octo-arm" type="image/svg+xml">
+                    </img>
+                    <img src="img/github-body.svg" xmlns="http://www.w3.org/2000/svg" type="image/svg+xml" >
+                    </img>
+                </a>
+            </div>
+        </nav>
     <div class="container-fluid wrapper">
         <div class="row">
             <div class="col-3 inspector">
@@ -29,7 +41,7 @@
                 
                 <div class="list list-documents">
                     <div class="upload">
-                        <button class="btn btn-dark" id="upload-blockchain">Upload</button>
+                        <button class="btn btn-primary" id="upload-blockchain"><span class="icon-folder-upload"> Upload</span></button>
                     </div>
                     <div class="doc">
                         <div>12.01.2017</div>
@@ -50,7 +62,7 @@
                 </div>
                 <div class="list list-companies">
                     <div class="upload">
-                        <button class="btn btn-dark">Upload</button>
+                        <button class="btn btn-primary"><span class="icon-folder-download"> Download</span></button>
                     </div>
                     <div class="doc">
                         <div>company1</div>
@@ -62,8 +74,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-9 graph" id="graph" style="display:none">
-                <svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg">
+            <div class="col-9 graph">
+                <svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" id="graph" style="display:none">
                 </svg>
                 <!-- <div class="card text-center">
                   <div class="card-header">
@@ -77,9 +89,7 @@
                     2 days ago
                   </div>
                 </div> -->
-            </div>
-            <div class="col-9 table-hash" id="table-hash" style="display:block; margin-left: 10%;">
-                <div id="set" class="text-center"></div>
+                <div id="table-hash" class="stext-center" style="display:block"></div>
             </div>
         </div>
     </div>
