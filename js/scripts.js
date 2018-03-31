@@ -22,7 +22,7 @@ $(document).ready(function(){
     
     var centerX = $('svg').width()/2;
     var centerY = $('svg').height()/2;
-    var N = 7;
+    var N = 6;
     var R = 300;
     var r = 40;
     var cmp = [];
