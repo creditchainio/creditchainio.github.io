@@ -65,7 +65,11 @@ header {
   background-color: #f4f4f4;
 }
 svg{
+    margin-left: 20%;
 	height: 100vh;
+}
+#graph{
+    display: none;
 }
 .graph .cmp {
   background-color: burlywood;
@@ -82,8 +86,31 @@ svg{
   cursor: pointer;
 }
 .table-hash{
+    display: block;
     background-color: #f4f4f4;
 }
+.control-buttons{
+    display: flex;
+    justify-content: space-around;
+}
+.control-buttons button{
+    width: 25%;
+}
+/*svg graph*/
+circle:hover{
+    fill: white;
+    cursor: pointer;
+}
+.credits>text{
+    
+}
+.str2{
+    
+}
+line:hover{
+    stroke: red;
+}
+
 
 @font-face {
   font-family: 'icomoon';

@@ -70,12 +70,17 @@
                         <div>company2</div>
                         <div></div>
                     </div>
+                    <div class="control-buttons">
+                        <button class="btn btn-primary">Init</button>
+                        <button class="btn btn-primary" data-frame='0'>Next step</button>
+                    </div>
                 </div>
+                
             </div>
             <div class="col-9 graph">
-                <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="600px" height="600px" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 600 600" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <svg id="graphSVG" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="600px" height="600px" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 600 600" xmlns:xlink="http://www.w3.org/1999/xlink">
                      <defs>
-  <font id="FontID0" horiz-adv-x="666" font-variant="normal" class="str1" style="fill-rule:nonzero" font-weight="400">
+                          <font id="FontID0" horiz-adv-x="666" font-variant="normal" class="str1" style="fill-rule:nonzero" font-weight="400">
 	<font-face 
 		font-family="Arial">
 		<font-face-src>
@@ -90,61 +95,63 @@
    <glyph unicode="4" horiz-adv-x="556" d="M322.993 0l0 171.001 -310.999 0 0 81.0006 327.014 464 71.9829 0 0 -464 97.0165 0 0 -81.0006 -97.0165 0 0 -171.001 -87.9987 0zm0 252.002l0 322.16 -224.488 -322.16 224.488 0z"/>
    <glyph unicode="1" horiz-adv-x="556" d="M371.997 0l-87.9987 0 0 560.325c-21.1714,-20.321 -49.0043,-40.5003 -83.3392,-60.6619 -34.3172,-20.1616 -65.3214,-35.327 -92.6582,-45.337l0 85.0046c49.1638,22.9962 92.1621,51.0063 128.995,83.9948 36.833,32.8467 63.0005,64.6659 78.3431,95.67l56.6579 0 0 -718.996z"/>
   </font>
-  <style type="text/css">
-   <![CDATA[
-        @font-face { font-family:"Arial";font-variant:normal;font-weight:normal;src:url("#FontID0") format(svg)}
-        .str1 {stroke-width:13.5001}
-        .str3 {stroke-width:19.6371}
-        .str0 {stroke:#339966;stroke-width:3.99923}
-        .str2 {stroke:#339966;stroke-width:0.900004}
-        .str4 {stroke:gray;stroke-width:0.900004}
-        .fil0 {fill:none}
-        .fil3 {fill:black}
-        .fil2 {fill:#339966}
-        .fil1 {fill:white}
-        .fnt1 {font-weight:normal;font-size:45.8329px;font-family:'Arial'}
-        .fnt0 {font-weight:normal;font-size:66.6664px;font-family:'Arial'}
-       ]]>
-      </style>
-     </defs>
-                     <g id="Слой_x0020_1">
-      <metadata id="CorelCorpID_0Corel-Layer"/>
-      <line class="fil0 str0" x1="94" y1="267" x2="307" y2= "78" />
-      <line class="fil0 str0" x1="94" y1="267" x2="161" y2= "502" />
-      <line class="fil0 str0" x1="161" y1="502" x2="307" y2= "78" />
-      <line class="fil0 str0" x1="501" y1="251" x2="454" y2= "494" />
-      <line class="fil0 str0" x1="501" y1="251" x2="307" y2= "78" />
-      <line class="fil0 str0" x1="454" y1="494" x2="161" y2= "502" />
-      <circle class="fil1 str0" cx="161" cy="502" r="50"/>
-      <circle class="fil1 str0" cx="454" cy="494" r="50"/>
-      <circle class="fil1 str0" cx="501" cy="251" r="50"/>
-      <circle class="fil1 str0" cx="307" cy="78" r="50"/>
-      <circle class="fil1 str0" cx="94" cy="267" r="50"/>
-      <text x="78" y="291"  class="fil2 str2 fnt0">1</text>
-      <text x="291" y="102"  class="fil2 str2 fnt0">5</text>
-      <text x="485" y="275"  class="fil2 str2 fnt0">4</text>
-      <text x="438" y="518"  class="fil2 str2 fnt0">3</text>
-      <text x="145" y="526"  class="fil2 str2 fnt0">2</text>
-      <g transform="matrix(0.765214 -0.643776 0.643776 0.765214 -264.1 159.112)">
-       <text x="300" y="300"  class="fil3 str4 fnt1">100</text>
-      </g>
-      <g transform="matrix(0.999734 -0.0230809 0.0230809 0.999734 -33.0128 198.36)">
-       <text x="300" y="300"  class="fil3 str4 fnt1">400</text>
-      </g>
-      <g transform="matrix(0.30553 -0.952183 0.952183 0.30553 -107.175 529.257)">
-       <text x="300" y="300"  class="fil3 str4 fnt1">300</text>
-      </g>
-      <g transform="matrix(0.328801 0.944399 -0.944399 0.328801 258.223 -31.6542)">
-       <text x="300" y="300"  class="fil3 str4 fnt1">150</text>
-      </g>
-      <g transform="matrix(0.737775 0.675047 -0.675047 0.737775 368.139 -296.421)">
-       <text x="300" y="300"  class="fil3 str4 fnt1">500</text>
-      </g>
-      <g transform="matrix(-0.180811 0.983518 -0.983518 -0.180811 848.6 93.1295)">
-       <text x="300" y="300"  class="fil3 str4 fnt1">200</text>
-      </g>
-     </g>
-                </svg>
+                          <style type="text/css">
+                               <![CDATA[
+                                    @font-face { font-family:"Arial";font-variant:normal;font-weight:normal;src:url("#FontID0") format(svg)}
+                                    .str1 {stroke-width:13.5001}
+                                    .str3 {stroke-width:19.6371}
+                                    .str0 {stroke:#339966;stroke-width:3.99923}
+                                    .str2 {stroke:#339966;stroke-width:0.900004}
+                                    .str4 {stroke:gray;stroke-width:0.900004}
+                                    .str5{stroke:black}
+                                    .fil0 {fill:none}
+                                    .fil3 {fill:black}
+                                    .fil2 {fill:#339966}
+                                    .fil1 {fill:#f4f4f4}
+                                    .fil4 {fill:red}
+                                    .fnt1 {font-weight:normal;font-size:30px;font-family:'Arial'}
+                                    .fnt0 {font-weight:normal;font-size:66.6664px;font-family:'Arial'}
+                                   ]]>
+                          </style>
+                     </defs>
+                     <g id="layer1">
+                          <metadata id="CorelCorpID_0Corel-Layer"/>
+                          <line id='line1' class="fil0 str0" x1="94" y1="267" x2="307" y2= "78" />
+                          <line id='line2' class="fil0 str0" x1="94" y1="267" x2="161" y2= "502" />
+                          <line id='line3' class="fil0 str0" x1="161" y1="502" x2="307" y2= "78" />
+                          <line id='line4' class="fil0 str0" x1="501" y1="251" x2="454" y2= "494" />
+                          <line id='line5' class="fil0 str0" x1="501" y1="251" x2="307" y2= "78" />
+                          <line id='line6' class="fil0 str0" x1="454" y1="494" x2="161" y2= "502" />
+                          <circle class="fil1 str0" cx="161" cy="502" r="50"/>
+                          <circle class="fil1 str0" cx="454" cy="494" r="50"/>
+                          <circle class="fil1 str0" cx="501" cy="251" r="50"/>
+                          <circle class="fil1 str0" cx="307" cy="78" r="50"/>
+                          <circle class="fil1 str0" cx="94" cy="267" r="50"/>
+                          <text id="text1" x="78" y="291"  class="fil3 str5 fnt0">1</text>
+                          <text id="text5" x="291" y="102"  class="fil3 str5 fnt0">5</text>
+                          <text id="text4" x="485" y="275"  class="fil3 str5 fnt0">4</text>
+                          <text id="text3" x="438" y="518"  class="fil3 str5 fnt0">3</text>
+                          <text id="text2" x="145" y="526"  class="fil3 str5 fnt0">2</text>
+                          <g class="credits" transform="matrix(0.765214 -0.643776 0.643776 0.765214 -264.1 159.112)">
+                           <text x="300" y="300"  class="fil3 str4 fnt1">100</text>
+                          </g>
+                          <g class="credits" transform="matrix(0.999734 -0.0230809 0.0230809 0.999734 -33.0128 198.36)">
+                           <text x="300" y="300"  class="fil3 str4 fnt1">400</text>
+                          </g>
+                          <g class="credits" transform="matrix(0.30553 -0.952183 0.952183 0.30553 -107.175 529.257)">
+                           <text x="300" y="300"  class="fil3 str4 fnt1">300</text>
+                          </g>
+                          <g class="credits" transform="matrix(0.328801 0.944399 -0.944399 0.328801 258.223 -31.6542)">
+                           <text x="300" y="300"  class="fil3 str4 fnt1">150</text>
+                          </g>
+                          <g class="credits" transform="matrix(0.737775 0.675047 -0.675047 0.737775 368.139 -296.421)">
+                           <text x="300" y="300"  class="fil3 str4 fnt1">500</text>
+                          </g>
+                          <g class="credits" transform="matrix(-0.180811 0.983518 -0.983518 -0.180811 848.6 93.1295)">
+                           <text x="300" y="300"  class="fil3 str4 fnt1">200</text>
+                          </g>
+                         </g>
+                    </svg>
                 <div id="table-hash" class="stext-center" style="display:block"></div>
             </div>
         </div>

@@ -23,6 +23,31 @@ $(document).ready(function(){
         document.getElementsByClassName('list-documents')[0].style.display = 'block';        
     });
     
+    $('[data-frame = 0]').click(function(){
+        $('#line1').css('stroke','red');
+        $('#line2').css('stroke','red');
+        $('#line3').css('stroke','red');
+        /*$('#text1').css('fill','red');
+        $('#text1').css('stroke','red');
+        $('#text2').css('fill','red');
+        $('#text2').css('stroke','red');
+        $('#text5').css('fill','red');
+        $('#text5').css('stroke','red');*/
+        $('circle:nth-of-type(1)').css('stroke','red');
+        $('circle:nth-of-type(4)').css('stroke','red');
+        $('circle:nth-of-type(5)').css('stroke','red');
+        this.Attr('data-frame','1');
+    });
+    
+    $('[data-frame = 1]').click(function(){
+        stockStyle();
+    });
+                                
+    function stockStyle(){
+        var stockStroke = '#339966';
+        document.getElementsByClassName('str0').setAttribute('stroke',stockStroke);
+        //document.getElementsByClassName('')
+    }
     
     //drawing
     
