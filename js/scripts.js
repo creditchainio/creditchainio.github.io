@@ -1,11 +1,11 @@
 $(document).ready(function(){
     $('#blockchain').on('click',()=>{
         $('#table-hash').css('display','block');
-        $('#graph').css('display','none');
+        $('#graphSVG').css('display','none');
     });
 
     $('#companies').on('click',()=>{
-        $('#graph').css('display','block');
+        $('#graphSVG').css('display','block');
         $('#table-hash').css('display','none');
     })
 
