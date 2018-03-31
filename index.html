@@ -4,21 +4,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/golos-js@0.6.1/dist/golos.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <title>CreditChain</title>
   </head>
-  <body>
+  <body scroll="yes">
     <div class="container-fluid wrapper">
         <div class="row">
             <div class="col-3 inspector">
                 <ul class="nav nav-tabs">
-                  <li class="nav-item">
+                  <li class="nav-item" id="blockchain">
                     <a class="nav-link active btn-documents">
                         <img src="img/blockchain.png">
                         <div>blockchain</div>
                     </a>
                   </li>
-                  <li class="nav-item">
+                  <li class="nav-item" id="companies">
                     <a class="nav-link btn-companies">
                         <img src="img/industry.png">
                         <div>companies</div>
@@ -61,8 +62,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-9 graph">
-
+            <div class="col-9 graph" id="graph" style="display:none">
                 <svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg">
                 </svg>
                 <!-- <div class="card text-center">
@@ -78,6 +78,9 @@
                   </div>
                 </div> -->
             </div>
+            <div class="" id="table-hash" style="display:none">
+                <div id="set"></div>
+            </div>
         </div>
     </div>
     
@@ -85,5 +88,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="js/scripts.js">2</script>
+    <script src="js/blockchain.js"></script>
   </body>
 </html>
