@@ -26,7 +26,7 @@ $(document).ready(function(){
     
     //drawing
     
-    $('svg').width($('.graph').width());
+    /*$('svg').width($('.graph').width());
     $('svg').height($('.graph').height());
     
     var centerX = $('svg').width()/2;
@@ -37,9 +37,10 @@ $(document).ready(function(){
     var r = 40;
     var cmp = [];
     var lines = [];
+    var targets = [1,2,3,4,5,0];
     
     initialize(N,R);
-    drawChain(cmp);
+    drawChain(cmp,lines);
     
     function initialize(N,R){
         var fi = 0;
@@ -59,21 +60,24 @@ $(document).ready(function(){
         for(var i=0; i<M;i++){
             var Line = new Object();
             Line.from = i;
-            Line.to = (i!=M-1)? i+1 : 0;
+            Line.to = targets[i];
             Line.ID = Line.from+'-'+Line.to;
             lines.push(Line);
         }
+        
     }
       
-    function drawChain(cmp){
-        drawLines(cmp);
+    function drawChain(cmp,lines){
+        //console.log(lines);
+        drawLines(lines);
         drawNodes(cmp);
     }
     
-    function drawLines(cmp){
+    function drawLines(lines){
         for(var i=0; i<M; i++){
             var from = findCmp(cmp,lines[i].from);
             var to = findCmp(cmp,lines[i].to);
+            //console.log(from+' '+to);
             drawLine(lines[i]);
             //for(var j=0;j<cmp[i].binds.length;j++){
             //    var targetCmp = findCmp(cmp,cmp[i].binds[j]);
@@ -92,11 +96,13 @@ $(document).ready(function(){
     function findCmp(cmp,ID){
         var index = 0;
         for(var i=0; i<N; i++){
+            console.log(cmp[i].ID+' == '+ ID);
             if(cmp[i].ID==ID){
                 index = i;
                 break;
-            }   
+            }
         }
+        
         return index;
     }
     
@@ -126,7 +132,7 @@ $(document).ready(function(){
         $('svg').append(line);
     }*/
     
-    function drawLine(line){
+    /*function drawLine(line){
         //drawLine1(findCmp(line.from),findCmp(line.to));
         var line = document.createElementNS('http://www.w3.org/2000/svg','line');
         line.setAttribute('id',line.ID);
@@ -138,5 +144,5 @@ $(document).ready(function(){
         line.setAttribute('stroke','#5a9578');
         line.setAttribute('stroke-width',5);
         $('svg').append(line);
-    }
+    }*/
 });
