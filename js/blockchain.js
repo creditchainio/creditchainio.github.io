@@ -1,6 +1,6 @@
     let _from='test7', to='test1', agent='test3', masterWho = 'test3'
     const wif = '5J1kGxcN1fhSSwBBJDFKDD8pExrBT7idSs7fr3Am4AFpah7srzU', username = 'test8'
-    const constPermlik = '53zu6x-01-04-2018';
+    const constPermlik = '2dnzo1-01-04-2018';
     let addressTag ='';
     golos.config.set('websocket', 'wss://ws.testnet.golos.io');
     golos.config.set('chain_id', '5876894a41e6361bde2e73278f07340f2eb8b41c2facd29099de9deef6cdb679');
