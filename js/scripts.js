@@ -42,6 +42,9 @@ $(document).ready(function(){
     
     document.getElementById('download-blockchain').addEventListener('click',()=>{
         console.log(document.getElementById('download-blockchain').getAttribute('data-stage'));
+        if($('nav form').val()!= ""){
+            constPermlik = $('nav form').val();    
+        }
         golos.api.getContent(username, constPermlik, function(err, result) {
           //console.log(err, result);
           if (!err){

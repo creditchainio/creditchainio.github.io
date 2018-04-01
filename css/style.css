@@ -12,6 +12,12 @@ a:hover {
 .nav-tabs {
   border: none;
 }
+nav form{
+    background-color: white;
+    border-radius: 5px;
+    padding: 0px 10px;
+}
+
 header {
   height: 100vh;
   padding: 20px;
