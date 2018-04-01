@@ -66,7 +66,7 @@ $(document).ready(function(){
     
     function initialize(N,R){
         var fi = 0;
-        var dfi = 2*Math.PI/N; 
+        var dfi = 2*Math.PI/N;
         var bind;
         for(var i=0;i<N;i++){
             var Company = new Object();
