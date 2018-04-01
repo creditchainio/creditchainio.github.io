@@ -52,7 +52,10 @@ $(document).ready(function(){
         golos.api.getContent(username, addressTag, function(err, result) {
           //console.log(err, result);
           if (!err){
-            objects = JSON.parse(result.json_metadata).data;
+            console.log(result.json_metadata)
+            objects = JSON.parse(result.json_metadata);
+            console.log(objects);
+            objects = objects.data;
             N = objects.length;
             initialize(N,R);
             drawChain(cmp,lines);
