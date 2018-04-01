@@ -12,44 +12,6 @@
             //console.log(err, result);
         });
     }
-    /*function sendPost(test) {
-        let jsonMetadata = {
-            app: 'creditchain/0.1',
-            canonical: `https://creditchainio.github.io/`,
-            app_account: 'creditchain',
-            data: []
-        }, author = username, title = 'EE list', permlink = constPermlik; 
-        test.forEach((value) => {
-            jsonMetadata.data.push(value);
-        });
-        jsonMetadata = JSON.stringify(jsonMetadata);
-        permlink = String(Math.floor(Math.random() * (10000 - 1 + 1)) + 1);
-
-        golos.broadcast.comment(wif, author, constPermlik, author, permlink, title, '____', jsonMetadata, function(err, result) {
-            if (!err) {
-                let doc = document.createElement('div');
-                doc.className = 'doc';
-                doc.innerHTML = `<div><u>${result.operations[0][1].permlink}</div><div>done</div>`  
-                document.getElementById('listDoc').appendChild(doc);
-
-            } else console.log(err);
-        });
-    }
-    document.getElementById('upload-blockchain').addEventListener('click',()=>{
-
-        let array= [
-                    { "id":0, 'binds':[2], v: [100, 200], 'name': 'Нафтан' }, 
-                    { "id":1, 'binds':[0, 3, 5], v: [50, 170, 80], 'name':'Белтелеком' }, 
-                    { "id":2, 'binds':[4, 5], v: [25, 45, 160], 'name':'КосмосТВ' }, 
-                    { "id":3, 'binds':[5], v: [10, 60, 75], 'name':'Макдональдс' }, 
-                    { "id":4, 'binds':[3], v: [45, 87], 'name':'Литбел' }, 
-                    { "id":5, 'binds':[0], v: [78, 83, 97], "name":'Асторикс' } 
-                    ];
-        //let elem={};elem[`${first}`]=second;
-        //array.push(elem)
-        //console.log(array);
-        sendPost(array);
-    })*/
     document.getElementById('blockchain').addEventListener('click',()=>{
         history();
     })
