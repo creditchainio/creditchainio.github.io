@@ -1,6 +1,6 @@
     let _from='test7', to='test1', agent='test3', masterWho = 'test3'
     const wif = '5JwrjAzTveuuG3Kkpwf9iGNe94voVgMT6SdkVHjpN4nvThLCVLY', username = 'test7'
-    const constPermlik = '01-04-2018';
+    const constPermlik = '02-04-2018-1';
 
     golos.config.set('websocket', 'wss://ws.testnet.golos.io');
     golos.config.set('chain_id', '5876894a41e6361bde2e73278f07340f2eb8b41c2facd29099de9deef6cdb679');
@@ -32,14 +32,21 @@
                 doc.innerHTML = `<div><u>${result.operations[0][1].permlink}</div><div>done</div>`  
                 document.getElementById('listDoc').appendChild(doc);
 
-            } else alert('CHECK CONNECTION TO THE INTERNET');
+            } else console.log(err);
         });
     }
     document.getElementById('upload-blockchain').addEventListener('click',()=>{
 /*        let first = document.getElementById('getFirst').value;
         let second = document.getElementById('getSecond').value;*/
         
-        let array= [{naftan:[100,200,300,400]}, {belaz:[500,600,700,800]}, {maz:[900,1000,1100,1200]}];
+        let array= [
+                    { "id":1, 'binds':[2, 3], value: [100, 200], 'name': 'Нафтан' }, 
+                    { "id":2, 'binds':[1, 3, 5], value: [50, 170, 80], 'name':'Белтелеком' }, 
+                    { "id":3, 'binds':[2, 4, 5], value: [25, 45, 160], 'name':'КосмосТВ' }, 
+                    { "id":4, 'binds':[1, 3, 4], value: [10, 60, 75], 'name':'Макдональдс' }, 
+                    { "id":5, 'binds':[2, 5], value: [45, 87], 'name':'Литбел' }, 
+                    { "id":6, 'binds':[1, 3, 5], value: [78, 83, 97], "name":'Асторикс' } 
+                    ];
         //let elem={};elem[`${first}`]=second;
         //array.push(elem)
         //console.log(array);

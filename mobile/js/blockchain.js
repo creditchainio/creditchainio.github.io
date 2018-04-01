@@ -1,6 +1,6 @@
     let _from='test7', to='test1', agent='test3', masterWho = 'test3'
     const wif = '5JwrjAzTveuuG3Kkpwf9iGNe94voVgMT6SdkVHjpN4nvThLCVLY', username = 'test7'
-    const constPermlik = '01-04-2018';
+    const constPermlik = '02-04-2018-1';
 
     golos.config.set('websocket', 'wss://ws.testnet.golos.io');
     golos.config.set('chain_id', '5876894a41e6361bde2e73278f07340f2eb8b41c2facd29099de9deef6cdb679');
@@ -36,14 +36,13 @@
         });
     }
     document.getElementById('download-blockchain').addEventListener('click',()=>{
-/*        let first = document.getElementById('getFirst').value;
-        let second = document.getElementById('getSecond').value;*/
-        
-        let array= [{naftan:[100,200,300,400]}, {belaz:[500,600,700,800]}, {maz:[900,1000,1100,1200]}];
-        //let elem={};elem[`${first}`]=second;
-        //array.push(elem)
-        //console.log(array);
-        sendPost(array);
+        golos.api.getContentReplies(username, constPermlik, function(err, result) {
+          console.log(err, result);
+          if (!err) {
+            console.log(JSON.parse(result.json_metadata));
+          }
+          else console.error(err);
+        });
     })
     document.getElementById('blockchain').addEventListener('click',()=>{
         history();
