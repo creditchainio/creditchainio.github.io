@@ -23,6 +23,8 @@ $(document).ready(function(){
         document.getElementsByClassName('list-documents')[0].style.display = 'block';        
     });
     
+    /*Презентационный пример*/
+    /*
     document.getElementById('btn-control').addEventListener('click',function(){
         var btn = document.getElementById('btn-control'); 
         if(btn.getAttribute('data-frame')==0){
@@ -63,17 +65,10 @@ $(document).ready(function(){
         }
     });
     
-    
     function click0(){
         $('#line1').css('stroke','red');
         $('#line2').css('stroke','red');
         $('#line3').css('stroke','red');
-        /*$('#text1').css('fill','red');
-        $('#text1').css('stroke','red');
-        $('#text2').css('fill','red');
-        $('#text2').css('stroke','red');
-        $('#text5').css('fill','red');
-        $('#text5').css('stroke','red');*/
         $('circle:nth-of-type(1)').css('stroke','red');
         $('circle:nth-of-type(4)').css('stroke','red');
         $('circle:nth-of-type(5)').css('stroke','red');
@@ -111,7 +106,6 @@ $(document).ready(function(){
     function click5(){
         $('#line1').css('stroke','red');
         $('#line2').css('stroke','red');
-        
         document.getElementById('btn-control').setAttribute('data-frame',6);
     }
     function click6(){
@@ -120,8 +114,6 @@ $(document).ready(function(){
         $('#line2').css('stroke','none');
         $('#text_1').remove();
         $('#text_4').remove();
-        //$('#text_1').css('display','none');
-        //$('#text_4').css('display','none');
         $('circle:nth-of-type(5)').css('stroke','red');
         document.getElementById('btn-control').setAttribute('data-frame',7);
     }
@@ -145,14 +137,11 @@ $(document).ready(function(){
         var stockStroke = '#339966';
         $('.str0').css('stroke',stockStroke);
         $('.str4').css('fill','black');
-        //Array.from(document.getElementsByClassName('str0')).forEach(function(item){
-        //    item.setAttribute('stroke',stockStroke);
-        //});
     }
+    */
     
-    //drawing
-    
-    /*$('svg').width($('.graph').width());
+    //Процедурное рисование
+    $('svg').width($('.graph').width());
     $('svg').height($('.graph').height());
     
     var centerX = $('svg').width()/2;
@@ -178,37 +167,36 @@ $(document).ready(function(){
             Company.x = centerX + R*Math.cos(fi);
             Company.y = centerY + R*Math.sin(fi);
             Company.R = r;
-//            (i!=N-1)? bind = i+1 : bind = 0;
-//            Company.binds = [bind,2];
+            Company.binds = [targets[i]];
             fi+=dfi;
             cmp.push(Company);
         }
-        for(var i=0; i<M;i++){
-            var Line = new Object();
-            Line.from = i;
-            Line.to = targets[i];
-            Line.ID = Line.from+'-'+Line.to;
-            lines.push(Line);
-        }
+        cmp[0].binds = [1,2];
+        cmp[1].binds = [2];
+        cmp[2].binds = [3];
+        cmp[3].binds = [4];
+        cmp[4].binds = [5];
+        cmp[5].binds = [0];
         
+        for(var i=0; i<N;i++){
+            for(var j=0;j<cmp[i].binds.length;j++){
+                var Line = new Object();
+                Line.from = i;
+                Line.to = cmp[i].binds[j];
+                Line.ID = Line.from+'-'+Line.to;
+                lines.push(Line);
+            }        
+        }
     }
       
     function drawChain(cmp,lines){
-        //console.log(lines);
-        drawLines(lines);
+        drawLines(lines,cmp);
         drawNodes(cmp);
     }
     
-    function drawLines(lines){
-        for(var i=0; i<M; i++){
-            var from = findCmp(cmp,lines[i].from);
-            var to = findCmp(cmp,lines[i].to);
-            //console.log(from+' '+to);
-            drawLine(lines[i]);
-            //for(var j=0;j<cmp[i].binds.length;j++){
-            //    var targetCmp = findCmp(cmp,cmp[i].binds[j]);
-            //    drawLine(cmp[i],cmp[targetCmp]);
-            //}
+    function drawLines(lines,cmp){
+        for(var i=0; i<lines.length; i++){
+            drawLine(lines[i],cmp);
         }
     }
     
@@ -216,20 +204,14 @@ $(document).ready(function(){
         for(var i=0; i<N; i++){
             drawCirc(cmp[i]);
         }
-        
     }
     
     function findCmp(cmp,ID){
-        var index = 0;
         for(var i=0; i<N; i++){
-            console.log(cmp[i].ID+' == '+ ID);
             if(cmp[i].ID==ID){
-                index = i;
-                break;
+                return i;
             }
         }
-        
-        return index;
     }
     
     function drawCirc(Company){
@@ -244,31 +226,19 @@ $(document).ready(function(){
         circ.setAttribute('stroke-width',5);
         $('svg').append(circ);
     }
-    
-    /*function drawLine1(Company1,Company2){
-        var line = document.createElementNS('http://www.w3.org/2000/svg','line');
-        line.setAttribute('id',Company1.ID+'-'+Company2.ID);
-        line.setAttribute('x1',Company1.x);
-        line.setAttribute('y1',Company1.y);
-        line.setAttribute('x2',Company2.x);
-        line.setAttribute('y2',Company2.y);
-        line.setAttribute('class','bind');
-        line.setAttribute('stroke','#5a9578');
-        line.setAttribute('stroke-width',5);
-        $('svg').append(line);
-    }*/
-    
-    /*function drawLine(line){
-        //drawLine1(findCmp(line.from),findCmp(line.to));
+        
+    function drawLine(line, cmp){
+        var from = findCmp(cmp,line.from);
+        var to = findCmp(cmp,line.to);
         var line = document.createElementNS('http://www.w3.org/2000/svg','line');
         line.setAttribute('id',line.ID);
-        line.setAttribute('x1',findCmp(cmp,line.from).x);
-        line.setAttribute('y1',findCmp(cmp,line.from).y);
-        line.setAttribute('x2',findCmp(cmp,line.to).x);
-        line.setAttribute('y2',findCmp(cmp,line.to).y);
+        line.setAttribute('x1',cmp[from].x);
+        line.setAttribute('y1',cmp[from].y);
+        line.setAttribute('x2',cmp[to].x);
+        line.setAttribute('y2',cmp[to].y);
         line.setAttribute('class','bind');
         line.setAttribute('stroke','#5a9578');
         line.setAttribute('stroke-width',5);
         $('svg').append(line);
-    }*/
+    }
 });
