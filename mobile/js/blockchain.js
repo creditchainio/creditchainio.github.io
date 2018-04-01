@@ -36,10 +36,12 @@
         });
     }
     document.getElementById('download-blockchain').addEventListener('click',()=>{
-        golos.api.getContentReplies(username, constPermlik, function(err, result) {
+        golos.api.getContent(username, constPermlik, function(err, result) {
           console.log(err, result);
           if (!err) {
-            console.log(JSON.parse(result.json_metadata));
+            JSON.parse(result.json_metadata);
+
+            
           }
           else console.error(err);
         });
