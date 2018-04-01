@@ -40,10 +40,12 @@ $(document).ready(function(){
     var objects = [];
     
     document.getElementById('download-blockchain').addEventListener('click',()=>{
+        console.log(document.getElementById('download-blockchain').getAttribute('data-stage'));
         golos.api.getContent(username, constPermlik, function(err, result) {
           //console.log(err, result);
           if (!err){
             objects = JSON.parse(result.json_metadata).data;
+            console.log(result.json_metadata);
             console.log(objects);
             initialize(N,R);
             drawChain(cmp,lines);

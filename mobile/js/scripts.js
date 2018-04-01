@@ -70,12 +70,6 @@ $(document).ready(function(){
             cmp.push(Company);
             console.log(Company);
         }
-        /*cmp[0].binds = [1,2];
-        cmp[1].binds = [2];
-        cmp[2].binds = [3];
-        cmp[3].binds = [4];
-        cmp[4].binds = [5];
-        cmp[5].binds = [0];*/
         
         for(var i=0; i<N;i++){
             for(var j=0;j<cmp[i].binds.length;j++){
