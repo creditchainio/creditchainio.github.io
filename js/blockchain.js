@@ -7,7 +7,6 @@
 
     function history(){
         golos.api.getContentReplies(username, constPermlik, function(err, result) {
-            
             document.getElementById('table-hash').innerHTML='';
             result.forEach(value => {addressTag = value.permlink; let ss = document.getElementById('table-hash').innerHTML= document.getElementById('table-hash').innerHTML + '<br><div class="border border-secondary text-center">Address id:<h3>'+addressTag+'</h3></div>'});
             //console.log(err, result);
