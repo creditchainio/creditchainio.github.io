@@ -20,7 +20,7 @@
             data: []
         }, author = username, title = 'EE list', permlink = constPermlik; 
         test.forEach((value) => {
-            jsonMetadata.data.push(window.btoa(window.btoa(value)));
+            jsonMetadata.data.push(value);
         });
         jsonMetadata = JSON.stringify(jsonMetadata);
             //permlink = String(Math.floor(Math.random() * (10000 - 1 + 1)) + 1);
@@ -29,23 +29,12 @@
             if (!err) {
                 let doc = document.createElement('div');
                 doc.className = 'doc';
-                doc.innerHTML = `<div><u>${result.operations[0][1].permlink}</div><div>done</u></div>`  
+                doc.innerHTML = `<div><u>${result.operations[0][1].permlink}</div><div>done</div>`  
                 document.getElementById('listDoc').appendChild(doc);
 
-            } else alert('CHECK CONNECTION TO THE INTERNET');
+            } else console.log(err);
         });
     }
-    document.getElementById('download-blockchain').addEventListener('click',()=>{
-        golos.api.getContent(username, constPermlik, function(err, result) {
-          console.log(err, result);
-          if (!err) {
-           /* JSON.parse(result.json_metadata);
-*/
-            
-          }
-          else console.error(err);
-        });
-    })
     document.getElementById('blockchain').addEventListener('click',()=>{
         history();
     })
