@@ -2,29 +2,38 @@ $(document).ready(function(){
     $('#blockchain').on('click',()=>{
         $('#table-hash').css('display','block');
         $('#graphSVG').css('display','none');
+        $('.graph').css('height','auto');
+        $(this).addClass('active');
+        $('.btn-companies').removeClass('active');
+        document.getElementsByClassName('list-companies')[0].style.display = 'none';
+        document.getElementsByClassName('list-documents')[0].style.display = 'block';  
     });
 
     $('#companies').on('click',()=>{
         $('#graphSVG').css('display','block');
+        $('.graph').css('height','100vh');
+        console.log($('.graph').css('width'));
+        console.log($('.graph').css('height'));
+        resizeSVG();
+        
         $('#table-hash').css('display','none');
-    })
-
-    $('.btn-companies').click(function(){
-        this.classList.add('active');
+        $(this).addClass('active');
         $('.btn-documents').removeClass('active');
         document.getElementsByClassName('list-companies')[0].style.display = 'block';
         document.getElementsByClassName('list-documents')[0].style.display = 'none';
         
+        
+    })
+
+    /*$('.btn-companies').click(function(){
+        
     });
     $('.btn-documents').click(function(){
-        this.classList.add('active');
-        $('.btn-companies').removeClass('active');
-        document.getElementsByClassName('list-companies')[0].style.display = 'none';
-        document.getElementsByClassName('list-documents')[0].style.display = 'block';        
-    });
+              
+    });*/
     
     /*Презентационный пример*/
-    /*
+    
     document.getElementById('btn-control').addEventListener('click',function(){
         var btn = document.getElementById('btn-control'); 
         if(btn.getAttribute('data-frame')==0){
@@ -138,12 +147,14 @@ $(document).ready(function(){
         $('.str0').css('stroke',stockStroke);
         $('.str4').css('fill','black');
     }
-    */
+    
+    function resizeSVG(){
+        $('svg').width($('.graph').width());
+        $('svg').height($('.graph').height());
+    }
     
     //Процедурное рисование
-    $('svg').width($('.graph').width());
-    $('svg').height($('.graph').height());
-    
+    /*
     var centerX = $('svg').width()/2;
     var centerY = $('svg').height()/2;
     var N = 6;
@@ -152,7 +163,6 @@ $(document).ready(function(){
     var r = 40;
     var cmp = [];
     var lines = [];
-    var targets = [1,2,3,4,5,0];
     
     initialize(N,R);
     drawChain(cmp,lines);
@@ -167,7 +177,7 @@ $(document).ready(function(){
             Company.x = centerX + R*Math.cos(fi);
             Company.y = centerY + R*Math.sin(fi);
             Company.R = r;
-            Company.binds = [targets[i]];
+            Company.binds = [];
             fi+=dfi;
             cmp.push(Company);
         }
@@ -241,4 +251,5 @@ $(document).ready(function(){
         line.setAttribute('stroke-width',5);
         $('svg').append(line);
     }
+    */
 });

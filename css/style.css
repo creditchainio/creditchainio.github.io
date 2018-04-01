@@ -65,10 +65,10 @@ header {
   background-color: #f4f4f4;
 }
 svg{
-    margin-left: 20%;
-	height: 100vh;
+    /*margin-left: 20%;
+	height: 100vh;*/
 }
-#graph{
+#graphSVG{
     display: none;
 }
 .graph .cmp {
@@ -101,14 +101,9 @@ circle:hover{
     fill: white;
     cursor: pointer;
 }
-.credits>text{
-    
-}
-.str2{
-    
-}
 line:hover{
     stroke: red;
+    cursor: pointer;
 }
 
 
