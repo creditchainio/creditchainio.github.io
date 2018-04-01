@@ -20,7 +20,7 @@ $(document).ready(function(){
         $(this).addClass('active');
         $('.btn-documents').removeClass('active');
         document.getElementsByClassName('list-companies')[0].style.display = 'block';
-        document.getElementsByClassName('list-documents')[0].style.display = 'none';
+        //document.getElementsByClassName('list-documents')[0].style.display = 'none';
     });
     
     function resizeSVG(){
@@ -83,7 +83,7 @@ $(document).ready(function(){
                 Line.from = i;
                 Line.to = cmp[i].binds[j];
                 Line.ID = Line.from+'-'+Line.to;
-                Line.val = objects[i].value[j];
+                Line.val = objects[i].v[j];
                 lines.push(Line);
             }
         }
