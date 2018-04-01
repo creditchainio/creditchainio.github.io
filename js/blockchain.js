@@ -1,6 +1,6 @@
     let _from='test7', to='test1', agent='test3', masterWho = 'test3'
     const wif = '5JwrjAzTveuuG3Kkpwf9iGNe94voVgMT6SdkVHjpN4nvThLCVLY', username = 'test7'
-    const constPermlik = '02-04-2018-2';
+    const constPermlik = '02-04-2018-3';
     let addressTag ='';
     golos.config.set('websocket', 'wss://ws.testnet.golos.io');
     golos.config.set('chain_id', '5876894a41e6361bde2e73278f07340f2eb8b41c2facd29099de9deef6cdb679');
@@ -12,7 +12,7 @@
             //console.log(err, result);
         });
     }
-/*    function sendPost(test) {
+    function sendPost(test) {
         let jsonMetadata = {
             app: 'creditchain/0.1',
             canonical: `https://creditchainio.github.io/`,
@@ -25,7 +25,7 @@
         jsonMetadata = JSON.stringify(jsonMetadata);
         permlink = String(Math.floor(Math.random() * (10000 - 1 + 1)) + 1);
 
-        golos.broadcast.comment(wif, '', 'post', author, permlink, title, '____', jsonMetadata, function(err, result) {
+        golos.broadcast.comment(wif, author, constPermlik, author, permlink, title, '____', jsonMetadata, function(err, result) {
             if (!err) {
                 let doc = document.createElement('div');
                 doc.className = 'doc';
@@ -34,8 +34,8 @@
 
             } else console.log(err);
         });
-    }*/
-/*    document.getElementById('upload-blockchain').addEventListener('click',()=>{
+    }
+    document.getElementById('upload-blockchain').addEventListener('click',()=>{
 
         let array= [
                     { "id":0, 'binds':[2], v: [100, 200], 'name': 'Нафтан' }, 
@@ -49,7 +49,7 @@
         //array.push(elem)
         //console.log(array);
         sendPost(array);
-    })*/
+    })
     document.getElementById('blockchain').addEventListener('click',()=>{
         history();
     })
