@@ -42,15 +42,21 @@ $(document).ready(function(){
     
     document.getElementById('download-blockchain').addEventListener('click',()=>{
         console.log(document.getElementById('download-blockchain').getAttribute('data-stage'));
-        if($('nav form').val()!= ""){
-            constPermlik = $('nav form').val();    
+        
+        var addressTag = '';
+        if($('nav input').val()!= ""){
+            addressTag = $('nav input').val();   
+            console.log(addressTag);
         }
-        golos.api.getContent(username, constPermlik, function(err, result) {
+        
+        golos.api.getContent(username, addressTag, function(err, result) {
           //console.log(err, result);
           if (!err){
             objects = JSON.parse(result.json_metadata).data;
+            N = objects.length;
             initialize(N,R);
             drawChain(cmp,lines);
+            console.log(objects);
           }
           else console.error(err);
         });
