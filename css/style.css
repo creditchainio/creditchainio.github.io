@@ -17,8 +17,15 @@ header {
   padding: 20px;
   background-image: url(../img/bg.jpg);
 }
+
 .header{
+    display: block;
     height: 100vh;
+    width: 100%;
+    background-position: 30% 45%;
+    background-size: 80%;
+    background-image: url('../img/title_02.png');
+    background-size: cover;
 }
 .wrapper .inspector {
   padding: 0;

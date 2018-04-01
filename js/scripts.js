@@ -23,6 +23,7 @@ $(document).ready(function(){
         document.getElementsByClassName('list-documents')[0].style.display = 'none';
     });
     
+    
     function resizeSVG(){
         $('svg').width($('.graph').width());
         $('svg').height($('.graph').height());
@@ -45,8 +46,6 @@ $(document).ready(function(){
           //console.log(err, result);
           if (!err){
             objects = JSON.parse(result.json_metadata).data;
-            console.log(result.json_metadata);
-            console.log(objects);
             initialize(N,R);
             drawChain(cmp,lines);
           }
@@ -72,12 +71,6 @@ $(document).ready(function(){
             cmp.push(Company);
             
         }
-        /*cmp[0].binds = [1,2];
-        cmp[1].binds = [2];
-        cmp[2].binds = [3];
-        cmp[3].binds = [4];
-        cmp[4].binds = [5];
-        cmp[5].binds = [0];*/
         
         for(var i=0; i<N;i++){
             for(var j=0;j<cmp[i].binds.length;j++){
@@ -90,8 +83,6 @@ $(document).ready(function(){
                 
             }
         }
-        console.log(cmp);
-        console.log(lines);
     }
       
     function drawChain(cmp,lines){
