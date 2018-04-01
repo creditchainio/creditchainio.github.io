@@ -12,7 +12,7 @@
             //console.log(err, result);
         });
     }
-    function sendPost(test) {
+    /*function sendPost(test) {
         let jsonMetadata = {
             app: 'creditchain/0.1',
             canonical: `https://creditchainio.github.io/`,
@@ -49,7 +49,7 @@
         //array.push(elem)
         //console.log(array);
         sendPost(array);
-    })
+    })*/
     document.getElementById('blockchain').addEventListener('click',()=>{
         history();
     })
