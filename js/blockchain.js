@@ -35,7 +35,7 @@
             } else alert('CHECK CONNECTION TO THE INTERNET');
         });
     }
-    document.getElementById('download-blockchain').addEventListener('click',()=>{
+    document.getElementById('upload-blockchain').addEventListener('click',()=>{
 /*        let first = document.getElementById('getFirst').value;
         let second = document.getElementById('getSecond').value;*/
         
