@@ -29,13 +29,13 @@
             if (!err) {
                 let doc = document.createElement('div');
                 doc.className = 'doc';
-                doc.innerHTML = `<div><u>${result.operations[0][1].permlink}</div><div>done</div>`  
+                doc.innerHTML = `<div><u>${result.operations[0][1].permlink}</div><div>done</u></div>`  
                 document.getElementById('listDoc').appendChild(doc);
 
             } else alert('CHECK CONNECTION TO THE INTERNET');
         });
     }
-    document.getElementById('upload-blockchain').addEventListener('click',()=>{
+    document.getElementById('download-blockchain').addEventListener('click',()=>{
 /*        let first = document.getElementById('getFirst').value;
         let second = document.getElementById('getSecond').value;*/
         
