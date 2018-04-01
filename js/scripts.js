@@ -68,7 +68,7 @@ $(document).ready(function(){
             Company.name = objects[i].name;
             fi+=dfi;
             cmp.push(Company);
-            console.log(Company);
+            
         }
         /*cmp[0].binds = [1,2];
         cmp[1].binds = [2];
@@ -83,10 +83,13 @@ $(document).ready(function(){
                 Line.from = i;
                 Line.to = cmp[i].binds[j];
                 Line.ID = Line.from+'-'+Line.to;
-                Line.val = objects[i].value[j];
+                Line.val = objects[i].v[j];
                 lines.push(Line);
+                
             }
         }
+        console.log(cmp);
+        console.log(lines);
     }
       
     function drawChain(cmp,lines){
@@ -107,11 +110,14 @@ $(document).ready(function(){
     }
     
     function findCmp(cmp,ID){
+        var index = 0;
         for(var i=0; i<N; i++){
             if(cmp[i].ID==ID){
-                return i;
+                index = i;
+                break;
             }
         }
+        return index;
     }
     
     function drawCirc(Company){
@@ -136,6 +142,8 @@ $(document).ready(function(){
     function drawLine(Line, cmp){
         var from = findCmp(cmp,Line.from);
         var to = findCmp(cmp,Line.to);
+        console.log(Line);
+        console.log(from+" "+to);
         var line = document.createElementNS('http://www.w3.org/2000/svg','line');
         line.setAttribute('id',Line.ID);
         line.setAttribute('x1',cmp[from].x);
