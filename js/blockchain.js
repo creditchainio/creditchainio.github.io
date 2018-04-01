@@ -40,7 +40,7 @@
         let second = document.getElementById('getSecond').value;*/
         
         let array= [
-                    { "id":0, 'binds':[2, 3], v: [100, 200], 'name': 'Нафтан' }, 
+                    { "id":0, 'binds':[2], v: [100, 200], 'name': 'Нафтан' }, 
                     { "id":1, 'binds':[0, 3, 5], v: [50, 170, 80], 'name':'Белтелеком' }, 
                     { "id":2, 'binds':[4, 5], v: [25, 45, 160], 'name':'КосмосТВ' }, 
                     { "id":3, 'binds':[5], v: [10, 60, 75], 'name':'Макдональдс' }, 
