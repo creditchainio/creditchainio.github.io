@@ -21,15 +21,11 @@ $(document).ready(function(){
         $('.btn-documents').removeClass('active');
         document.getElementsByClassName('list-companies')[0].style.display = 'block';
         document.getElementsByClassName('list-documents')[0].style.display = 'none';
-        
-        
-    })
-
-    /*$('.btn-companies').click(function(){
-        
     });
-    $('.btn-documents').click(function(){
-              
+    
+    /*$('#init').on('click',()=>{
+        $('#graphSVGp').toggle(100);
+        $('#graphSVG').toggle(100);
     });*/
     
     /*Презентационный пример*/
@@ -153,10 +149,11 @@ $(document).ready(function(){
         $('svg').height($('.graph').height());
     }
     
+    
     //Процедурное рисование
-    /*
-    var centerX = $('svg').width()/2;
-    var centerY = $('svg').height()/2;
+    
+    /*var centerX = Math.round( $('svg').width()*2);
+    var centerY = Math.round($('svg').height()*2.5);
     var N = 6;
     var M = 6;
     var R = 300;
@@ -194,8 +191,9 @@ $(document).ready(function(){
                 Line.from = i;
                 Line.to = cmp[i].binds[j];
                 Line.ID = Line.from+'-'+Line.to;
+                Line.val = 100;
                 lines.push(Line);
-            }        
+            }
         }
     }
       
@@ -235,13 +233,19 @@ $(document).ready(function(){
         circ.setAttribute('stroke','#5a9578');
         circ.setAttribute('stroke-width',5);
         $('svg').append(circ);
+        var tex = document.createElementNS('http://www.w3.org/2000/svg','text');
+        tex.setAttribute('font-size','30px');
+        tex.setAttribute('x',Company.x - 10);
+        tex.setAttribute('y',Company.y + 5);
+        tex.innerHTML = Company.ID;
+        $('svg').append(tex);
     }
         
-    function drawLine(line, cmp){
-        var from = findCmp(cmp,line.from);
-        var to = findCmp(cmp,line.to);
+    function drawLine(Line, cmp){
+        var from = findCmp(cmp,Line.from);
+        var to = findCmp(cmp,Line.to);
         var line = document.createElementNS('http://www.w3.org/2000/svg','line');
-        line.setAttribute('id',line.ID);
+        line.setAttribute('id',Line.ID);
         line.setAttribute('x1',cmp[from].x);
         line.setAttribute('y1',cmp[from].y);
         line.setAttribute('x2',cmp[to].x);
@@ -250,6 +254,12 @@ $(document).ready(function(){
         line.setAttribute('stroke','#5a9578');
         line.setAttribute('stroke-width',5);
         $('svg').append(line);
+        var tex = document.createElementNS('http://www.w3.org/2000/svg','text');
+        tex.setAttribute('x',(cmp[from].x + cmp[to].x)/2 -20);
+        tex.setAttribute('y',(cmp[from].y + cmp[to].y)/2 - 15);
+        tex.innerHTML = Line.val;
+        tex.setAttribute('font-size',30);
+        $('svg').append(tex);
     }
     */
 });
