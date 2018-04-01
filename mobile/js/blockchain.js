@@ -35,17 +35,16 @@
             } else alert('CHECK CONNECTION TO THE INTERNET');
         });
     }
-    document.getElementById('download-blockchain').addEventListener('click',()=>{
+    /*document.getElementById('download-blockchain').addEventListener('click',()=>{
         golos.api.getContent(username, constPermlik, function(err, result) {
           console.log(err, result);
-          if (!err) {
-            JSON.parse(result.json_metadata);
-
-            
+          if (!err){
+            //JSON.parse(result.json_metadata);
+              return result.json_metadata;
           }
           else console.error(err);
         });
-    })
+    })*/
     document.getElementById('blockchain').addEventListener('click',()=>{
         history();
     })
