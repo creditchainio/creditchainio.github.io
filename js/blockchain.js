@@ -40,12 +40,12 @@
         let second = document.getElementById('getSecond').value;*/
         
         let array= [
-                    { "id":1, 'binds':[2, 3], value: [100, 200], 'name': 'Нафтан' }, 
-                    { "id":2, 'binds':[1, 3, 5], value: [50, 170, 80], 'name':'Белтелеком' }, 
-                    { "id":3, 'binds':[2, 4, 5], value: [25, 45, 160], 'name':'КосмосТВ' }, 
-                    { "id":4, 'binds':[1, 3, 4], value: [10, 60, 75], 'name':'Макдональдс' }, 
-                    { "id":5, 'binds':[2, 5], value: [45, 87], 'name':'Литбел' }, 
-                    { "id":6, 'binds':[1, 3, 5], value: [78, 83, 97], "name":'Асторикс' } 
+                    { "id":1, 'binds':[2, 3], v: [100, 200], 'name': 'Нафтан' }, 
+                    { "id":2, 'binds':[1, 3, 5], v: [50, 170, 80], 'name':'Белтелеком' }, 
+                    { "id":3, 'binds':[2, 4, 5], v: [25, 45, 160], 'name':'КосмосТВ' }, 
+                    { "id":4, 'binds':[1, 3, 4], v: [10, 60, 75], 'name':'Макдональдс' }, 
+                    { "id":5, 'binds':[2, 5], v: [45, 87], 'name':'Литбел' }, 
+                    { "id":6, 'binds':[1, 3, 5], v: [78, 83, 97], "name":'Асторикс' } 
                     ];
         //let elem={};elem[`${first}`]=second;
         //array.push(elem)

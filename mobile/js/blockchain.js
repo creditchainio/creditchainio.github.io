@@ -36,15 +36,7 @@
         });
     }
     document.getElementById('download-blockchain').addEventListener('click',()=>{
-        golos.api.getContent(username, constPermlik, function(err, result) {
-          console.log(err, result);
-          if (!err) {
-            JSON.parse(result.json_metadata);
-
-            
-          }
-          else console.error(err);
-        });
+       
     })
     document.getElementById('blockchain').addEventListener('click',()=>{
         history();
